@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Wishes 💜</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #2b1055, #7597de);
+      overflow:hidden;
+      color:white;
+      text-align:center;
+    }
+
+    .container{
+      width:90%;
+      max-width:700px;
+      padding:40px;
+      border-radius:25px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1{
+      font-size:3rem;
+      margin-bottom:20px;
+      color:#f3d1ff;
+      text-shadow:0 0 15px #d580ff;
+    }
+
+    .wish{
+      font-size:1.2rem;
+      line-height:2;
+      color:#f8eaff;
+    }
+
+    .highlight{
+      color:#ffb3ff;
+      font-weight:bold;
+    }
+
+    .heart{
+      font-size:2rem;
+      animation: beat 1s infinite;
+      display:inline-block;
+      margin-top:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:12px 25px;
+      border-radius:30px;
+      text-decoration:none;
+      background:#d580ff;
+      color:white;
+      font-weight:bold;
+      transition:0.3s;
+      box-shadow:0 0 15px rgba(255,255,255,0.3);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:#f0a6ff;
+    }
+
+    /* Floating circles */
+
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      animation: float 8s infinite linear;
+    }
+
+    .circle:nth-child(1){
+      width:120px;
+      height:120px;
+      top:10%;
+      left:10%;
+    }
+
+    .circle:nth-child(2){
+      width:180px;
+      height:180px;
+      bottom:10%;
+      right:10%;
+      animation-duration:12s;
+    }
+
+    .circle:nth-child(3){
+      width:70px;
+      height:70px;
+      top:70%;
+      left:20%;
+      animation-duration:10s;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-25px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    @keyframes beat{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.2);}
+      100%{transform:scale(1);}
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <div class="container">
+
+    <h1>Hey Birthday Boy💜</h1>
+
+    <p class="wish">
+       <span class="highlight"></span>, <br>
+
+      This is the first time yu may see this typo wish ✨ <br>
+     So, Thank Me Later for this special greetings💫 
+     <br>
+      Once Again HappY BirThday! <br> Stay the same amazing soul forever🌙
+    </p>
+    <br><br><br>
+
+    <div class="heart">Wishes From Your Programmer Friend💜</div>
+
+    <br><br><br>
+
+    <a href="treat.html" class="btn"> Click pannunga Bro</a>
+
+  
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#a18cd1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Animated Background */
+
+.bubbles span{
+    position:absolute;
+    bottom:-100px;
+    width:30px;
+    height:30px;
+    background:rgba(255,255,255,0.3);
+    border-radius:50%;
+    animation:float 10s linear infinite;
+}
+
+.bubbles span:nth-child(1){
+    left:10%;
+    width:40px;
+    height:40px;
+    animation-duration:8s;
+}
+
+.bubbles span:nth-child(2){
+    left:25%;
+    animation-duration:12s;
+}
+
+.bubbles span:nth-child(3){
+    left:40%;
+    width:20px;
+    height:20px;
+    animation-duration:7s;
+}
+
+.bubbles span:nth-child(4){
+    left:60%;
+    width:50px;
+    height:50px;
+    animation-duration:14s;
+}
+
+.bubbles span:nth-child(5){
+    left:75%;
+    animation-duration:10s;
+}
+
+.bubbles span:nth-child(6){
+    left:90%;
+    width:25px;
+    height:25px;
+    animation-duration:9s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* Card */
+
+.card{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    color:white;
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+    animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.photo{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    margin-bottom:20px;
+    animation:pop 1.5s ease;
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(0);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.typing{
+    font-size:22px;
+    font-weight:300;
+    min-height:35px;
+    margin-bottom:25px;
+}
+
+button{
+    padding:14px 30px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff4081;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:#ffe4ec;
+}
+
+.hidden{
+    display:none;
+}
+
+#thankyou{
+    margin-top:25px;
+    animation:fadeIn 1s ease;
+}
+
+.nextBtn{
+    margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Bubbles -->
+
+<div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Birthday Card -->
+
+<div class="card">
+
+    <!-- CHANGE IMAGE HERE -->
+    <img src="friend.jpg" class="photo">
+
+    <!-- CHANGE NAME HERE -->
+    <h1>🎉 Happy Birthday🎂 <br> 💖ShakiLaN💖 </h1>
+
+    <div class="typing" id="typing"></div>
+
+    <button onclick="showThankYou()">
+        Click Here💖
+    </button>
+
+    <div id="thankyou" class="hidden">
+        <h2>💖May Murukan Bless Yu💖</h2>
+
+        <button class="nextBtn" onclick="nextPage()">
+            Tap Here😌
+        </button>
+    </div>
+
+</div>
+
+<!-- Birthday Music -->
+<audio autoplay loop>
+    <source src="birthday.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+/* Typing Animation */
+
+const text =
+"Wishing you endless Happiness, Success, depression and lots of Mana kastams forever😌✨";
+
+let i = 0;
+
+function typingEffect(){
+
+    if(i < text.length){
+
+        document.getElementById("typing").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typingEffect,60);
+    }
+}
+
+typingEffect();
+
+
+
+function showThankYou(){
+
+    document.getElementById("thankyou").classList.remove("hidden");
+}
+
+
+function nextPage(){
+
+    window.location.href = "wishes.html";
+}
+
+</script>
+
+</body>
+</html>
